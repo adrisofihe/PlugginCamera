@@ -1,0 +1,7 @@
+{
+  "name": "PlugginCamera",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
