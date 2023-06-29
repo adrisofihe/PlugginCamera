@@ -1,20 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Travelgram
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="false" class="content">
+  <div class="welcome-container">
+    <h1>BIENVENIDO A TRAVELGRAM</h1>
+    <p>comparte tus experiencias de viaje con nosotros</p>
+  </div>
+  <div class="card-container">
+    <ion-card class="trip-card">
+      <img src="assets/trip1.png" class="card-image" />
+      <ion-card-header>
+        <ion-card-title>Playa Barú</ion-card-title>
+        <ion-card-subtitle>Cartagena, Colombia</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card class="trip-card">
+      <img src="assets/trip1.png" class="card-image" />
+      <ion-card-header>
+        <ion-card-title>Desierto de la Tatacoa</ion-card-title>
+        <ion-card-subtitle>Huila, Colombia</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+
+    <ion-card class="trip-card">
+      <img src="{{imageSource}}" class="card-image" />
+      <ion-card-header>
+        <ion-card-title>titulo</ion-card-title>
+        <ion-card-subtitle>ubicacion</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <div id="upload-container">
+    <ion-button color = "transparent" (click)="takePicture()" >
+      <ion-icon name="camera" class="camera-icon"></ion-icon>
+      Camara
+    </ion-button>
   </div>
 </ion-content>
+
+
+
+
+

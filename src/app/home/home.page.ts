@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-
+import { Camera, CameraResultType } from '@capacitor/camera';
+import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,5 +10,17 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  constructor() {}
+  imageSource:any;
+  constructor(){}
+
+  takePicture = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source:CameraSource.Prompt
+    });
+    this.imageSource=image.dataUrl;
+  }
 }
+
