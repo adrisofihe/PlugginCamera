@@ -12,7 +12,7 @@ import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
 export class HomePage {
   imageSource:any;
   constructor(){}
-
+//TomarFotografia
   takePicture = async () => {
     const image = await Camera.getPhoto({
       quality: 90,
