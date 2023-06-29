@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {NgIf} from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { Camera, CameraResultType } from '@capacitor/camera';
-import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+//import { CameraSource } from '@capacitor/camera/dist/esm/definitions';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, NgIf, CommonModule],
 })
 export class HomePage {
-  imageSource:any;
-  constructor(){}
-//TomarFotografia
+
+  showCard = false;
+  imageSource: any;
+  constructor() {}
+
+
   takePicture = async () => {
     const image = await Camera.getPhoto({
       quality: 90,
@@ -20,7 +27,8 @@ export class HomePage {
       resultType: CameraResultType.DataUrl,
       source:CameraSource.Prompt
     });
-    this.imageSource=image.dataUrl;
-  }
-}
+    this.showCard = true;
+    this.imageSource=image.dataUrl;  
+  };
 
+}
